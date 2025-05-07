@@ -12,6 +12,16 @@ function filterByRating(items: Item[]): Item[] {
     return items.filter((item: Item) => item.rating >= 4)
 }
 
+function concatArrays<T>(...arrays: T[][]): T[] {
+    let result: T[] = []
+    for (const array of arrays) {
+        for(const element of array) {
+            result.push(element)
+        }
+    }
+    return result
+}
+
 class Vehicle {
     constructor(private make: string, private year: number) {}
 
