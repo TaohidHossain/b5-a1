@@ -34,3 +34,13 @@ function processValue(value: string | number): number {
     if (typeof value === 'string') return value.length
     return 2 * value
 }
+
+interface Product {
+    name: string;
+    price: number;
+}
+  
+function getMostExpensiveProduct(products: Product[]): Product | null {    
+    if (products.length === 0) return null
+    return products.reduce((prev, current) => (prev.price > current.price) ? prev : current)
+}
