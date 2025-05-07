@@ -3,11 +3,29 @@ function formatString(input: string, toUpper?: boolean): string {
         return input.toUpperCase()
     return input.toLowerCase()
 }
+
 type Item = {
     title: string
     rating: number
 }
-
 function filterByRating(items: Item[]): Item[] {
     return items.filter((item: Item) => item.rating >= 4)
+}
+
+class Vehicle {
+    constructor(private make: string, private year: number) {}
+
+    getInfo() {
+        console.log(`Make: ${this.make}, Year: ${this.year}`)
+    }
+}
+
+class Car extends Vehicle {
+    constructor(make: string, year: number, private model: string) {
+        super(make, year)
+    }
+
+    getModel() {
+        console.log(`Model: ${this.model}`)
+    }
 }
