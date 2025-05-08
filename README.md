@@ -47,12 +47,12 @@ const y = "hello"; // type of y is string
 const obj = { name: "John", age: 30 }; // type of obj is { name: string, age: number }
 ```
 
-## Benefits of Type Inference
+## :mag: Benefits of Type Inference
 - Faster development
 - Improve readability
 - Less boilerplate code
 
-But typescript is dumb like git(Very powerfull but dumb). Sometimes typeScript will get confues and will infer a type as any. One posible situation is given below.
+But typescript is dumb like git (very powerfull but dumb). Sometimes typescript will get confues and will infer a type as any. One posible situation is given below.
 ```
 class Animal {...}
 class Tiger extetends Animal {...}
@@ -63,7 +63,7 @@ let zoo = [new Tiger(...), new Monkey(...), new Elephant(...)]
 // typeof zoo = [Tiger | Monkey | Elephant]
 
 ```
-But if any super type is present in code then typeScript infers correctly
+But if any super type is present in code then typescript infers correctly
 
 ```
 let zoo = let zoo = [new Animal(...), new Tiger(...), new Monkey(...), new Elephant(...)]
