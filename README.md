@@ -19,3 +19,20 @@ Now let assume we have an object `type objType = {id: string, title: string}`. W
 ```
 type properties = keyof objType // type properties = "id" | "title"
 ```
+
+## :mag: Use Case of Keyof Operator
+
+One possible usecase is type narrowing. For example:
+
+```
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const person = { name: "John", age: 30 };
+
+console.log(getProperty(person, "name")); // Output: "John"
+console.log(getProperty(person, "age")); // Output: 30
+```
+
+Here generic type K's scope is narrowed down to the properties of generic type T's.
